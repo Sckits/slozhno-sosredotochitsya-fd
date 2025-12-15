@@ -9,4 +9,23 @@
     Так стили написанные ниже будут иметь больший вес,
     чем стили в медиазапросе предпочтений пользователя
   */
+
+  color-scheme: dark;
+  --nav-color: #ff0070;
+
+  --background-color: #05051a;
+  --main-text-color: #f2f2f2;
+  --accent-color: #db00ff;
+  --shadow-color: #ff0070;
+
+  --lead-bg-color: #ff0070;
+  --lead-text-color: #05051a;
+
+  --card-title-color: #000028;
+  --card-text-color: #f1b2ce;
+
+  --page-background: url("../images/cover-image-dark.png");
+  --page-bg-color: #05051a;
+
+  --main-bg: var(--main-bg-dark);
 }
