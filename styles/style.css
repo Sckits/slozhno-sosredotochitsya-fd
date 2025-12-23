@@ -9,7 +9,7 @@
 .page,
 .header,
 .content {
-  overflow-x: clip; /* лучше чем hidden */
+  overflow-x: clip;
 }
 
 
@@ -140,10 +140,6 @@
   line-height: 18px;
   letter-spacing: 0;
   font-weight: 400;
-}
-
-.header__theme-menu-button:hover {
-  border-color: rgba(255, 255, 255, 0.4);
 }
 
 .header__theme-menu-button_active {
@@ -291,7 +287,6 @@
 @media (min-width: 1024px) {
   .layout {
     width: 1024px;
-    margin: 0 auto;
     background-color: transparent;
   }
 }
@@ -378,10 +373,7 @@
     margin-bottom: 6px;
   }
   .section {
-  padding: 28px 20px;
-  }
-  .section-card {
-  padding-bottom: 0;
+    padding: 28px 20px;
   }
   .section-card__text {
     width: 98%;
