@@ -17,6 +17,7 @@
   --main-text-color: #19171a;
   --accent-color: #ffc2e6;
   --shadow-color: #ff8dcb;
+  --corner-color: #353430;
 
   --lead-bg-color: #ff8dcb;
   --lead-text-color: #353430;
@@ -25,7 +26,7 @@
   --card-text-color: #353430;
 
   --page-background: url("../images/cover-image-light.png");
-  --page-bg-color: #ffeef4;
+  --page-bg-color: #fff1f7;
 
   --main-bg: var(--main-bg-light);
 }

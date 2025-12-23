@@ -4,26 +4,58 @@
 */
 
 :root {
-  --main-bg-dark: #07102d;
-  --main-bg-light: #ffe7f3;
+  --main-bg-dark: #000028;
+  --main-bg-light: #ffeef7;
 
   /* дефолт, когда ни одна тема ещё не выбрана */
-  color-scheme: dark;
-  --nav-color: #ff0070;
+  color-scheme: light dark;
+}
 
-  --background-color: #05051a;
-  --main-text-color: #f2f2f2;
-  --accent-color: #db00ff;
-  --shadow-color: #ff0070;
+@media (prefers-color-scheme: light) {
+  :root,
+  :root.theme-auto {
+    color-scheme: light;
+    --nav-color: #05051a;
 
-  --lead-bg-color: #ff0070;
-  --lead-text-color: #05051a;
+    --background-color: #ffeef4;
+    --main-text-color: #19171a;
+    --accent-color: #ffc2e6;
+    --shadow-color: #ff8dcb;
+    --corner-color: #353430;
 
-  --card-title-color: #000028;
-  --card-text-color: #f1b2ce;
+    --lead-bg-color: #ff8dcb;
+    --lead-text-color: #353430;
 
-  --page-background: url("../images/cover-image-dark.png");
-  --page-bg-color: #05051a;
+    --card-title-color: #353430;
+    --card-text-color: #353430;
 
-  --main-bg: var(--main-bg-dark);
+    --page-background: url("../images/cover-image-light.png");
+    --page-bg-color: #fff1f7;
+
+    --main-bg: var(--main-bg-light);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root.theme-auto {
+    color-scheme: dark;
+    --nav-color: #ff0070;
+
+    --background-color: #05051a;
+    --main-text-color: #f2f2f2;
+    --accent-color: #db00ff;
+    --shadow-color: #ff0070;
+    --corner-color: #ff0070;
+
+    --lead-bg-color: #ff0070;
+    --lead-text-color: #05051a;
+
+    --card-title-color: #000028;
+    --card-text-color: #f1b2ce;
+
+    --page-background: url("../images/cover-image-dark.png");
+    --page-bg-color: #000028;
+
+    --main-bg: var(--main-bg-dark);
+  }
 }
