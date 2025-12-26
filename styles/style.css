@@ -4,24 +4,6 @@
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
   background-attachment: fixed;
   background-color: var(--page-bg-color);
-}
-
-.page,
-.header,
-.content {
-  overflow-x: clip;
-}
-
-
-.page::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-
-  width: min(100vw, 1024px);
-  height: 100vh;
 
   background-image: var(--page-background);
   background-size: cover;
@@ -29,9 +11,7 @@
   background-repeat: no-repeat;
 
   z-index: -1;
-  pointer-events: none;
 }
-
 
 /* Декоративные уголки */
 
@@ -95,7 +75,6 @@
   max-width: var(--page-max-width);
   margin: 0 auto;
   padding: var(--page-padding-y) var(--page-padding-x);
-  background-color: var(--main-bg);
 }
 
 .header__inner {
@@ -206,7 +185,7 @@
 
   font-size: 18px;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0;
   color: var(--shadow-color);
 }
 
@@ -225,6 +204,7 @@
 .theme-light .header__rec {
   display: none;
 }
+
 
 /* Заголовок */
 
@@ -309,6 +289,13 @@
   }
 }
 
+@media (max-height: 888px) and (max-width: 768px) {
+  .header__lead {
+    max-width: 491px;  /* как у тебя в основной версии */
+    margin-bottom: 125px;
+  }
+}
+
 @media (max-width: 375px) {
   .header__lead {
     max-width: 355px;
@@ -353,15 +340,23 @@
 }
 
 .section__layout-content,
-.section__layout.section__layout_type_3cards {
+.section__layout.section__layout_type_sidecards {
   display: grid;
   gap: 12px;
-  grid-template-columns: repeat(3, 1fr);
-  
+}
+
+.section__layout-content {
+  grid-template-columns: 1fr 2fr;
+  align-items: start;
+}
+
+.section__layout.section__layout_type_sidecards {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: start;
 }
 
 @media (max-width: 768px) {
-  .section__layout.section__layout_type_3cards {
+  .section__layout.section__layout_type_sidecards {
     grid-template-columns: 1fr;
     gap: 4px;
   }
@@ -420,7 +415,6 @@
 
 .title--regular {
   font-weight: 400;
-  font-style: Regular;
   font-size: 18px;
   line-height: 23.4px;
   letter-spacing: 0%;
@@ -454,19 +448,14 @@
 
 
 
-@media (min-width: 365px) {
+@media (max-width: 375px) {
   .section__layout-content {
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 1fr;
     align-items: start;
   }
 
   .section__block_main {
     min-height: 100%;
-  }
-
-  .section__layout_type_3cards {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    align-items: start;
   }
 }
 
@@ -587,7 +576,7 @@
   }
   .footer {
     min-height: 0;
-    height: 668px;
+    min-height: 668px;
   }
   .content {
     padding-bottom: 16px;
@@ -597,5 +586,18 @@
   }
 }
 
+html.theme-light .header__rec {
+  display: none;
+}
 
+@media (prefers-color-scheme: light) {
+  html.theme-auto .header__rec {
+    display: none;
+  }
+}
 
+@media (min-width: 769px) {
+  .gallery__grid {
+    grid-template-rows: 260px 320px 430px;
+  }
+}
